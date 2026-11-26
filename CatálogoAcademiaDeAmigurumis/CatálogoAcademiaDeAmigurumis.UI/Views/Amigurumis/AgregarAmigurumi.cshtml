@@ -1,0 +1,189 @@
+﻿@model CatálogoAcademiaDeAmigurumis.Abstracciones.Modelos.Amigurumi.AmigurumiDto
+
+@{
+    ViewBag.Title = "AgregarAmigurumi";
+}
+
+
+<div class="container mt-5">
+
+    <div class="text-center mb-5">
+
+        <h1 class="kroche-title">
+            🧸 Nuevo Amigurumi
+        </h1>
+
+        <p class="kroche-subtitle">
+            Agrega una nueva creación artesanal al catálogo.
+        </p>
+
+    </div>
+
+    <div class="kroche-card p-4">
+
+        <div class="row">
+
+            <!-- Imagen -->
+
+            <div class="col-md-4 text-center">
+
+                <img src="~/Imagenes/OsoKroche.png"
+                     class="preview-image"
+                     id="imagenPreview"
+                     style="width: 200px; height: 200px; object-fit: contain;" />
+
+                <br />
+                <br />
+
+                <label for="ImagenPrincipal" class="btn btn-kroche">
+                    Seleccionar imagen
+                </label>
+
+                <input type="file"
+                       id="ImagenPrincipal"
+                       name="ImagenPrincipal"
+                       accept="image/*"
+                       style="display: none;" />
+
+            </div>
+
+            <!-- Datos -->
+
+            <div class="col-md-8">
+
+                <div class="mb-3">
+
+                    <label>Nombre</label>
+
+                    @Html.TextBoxFor(
+                        m => m.Nombre,
+                        new
+                             {
+                            @class = "form-control kroche-input"
+                        })
+
+                </div>
+
+                <div class="mb-3">
+
+                    <label>Descripción</label>
+
+                    @Html.TextBoxFor(
+                        m => m.Descripcion,
+                        new
+                             {
+                            @class = "form-control kroche-input"
+                        })
+
+                </div>
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <label>Tamaño</label>
+
+                        @Html.TextBoxFor(
+                            m => m.Tamano,
+                            new
+                                 {
+                                @class = "form-control kroche-input"
+                            })
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label>Técnica</label>
+
+                        @Html.TextBoxFor(
+                            m => m.Tecnica,
+                            new
+                                 {
+                                @class = "form-control kroche-input"
+                            })
+
+                    </div>
+
+                </div>
+
+                <br />
+
+                <div class="row">
+
+                    <div class="col-md-6">
+
+                        <label>Precio</label>
+
+                        @Html.TextBoxFor(
+                            m => m.Precio,
+                            new
+                                 {
+                                @class = "form-control kroche-input"
+                            })
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <label>Estado</label>
+
+                        <select class="form-control kroche-input">
+
+                            <option>
+                                Disponible
+                            </option>
+
+                            <option>
+                                Agotado
+                            </option>
+
+                            <option>
+                                Desactivado
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <hr />
+
+        <div class="text-end">
+
+            <button class="btn estado-disponible">
+
+                Guardar Amigurumi 
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>document.getElementById("ImagenPrincipal").addEventListener("change", function (event) {
+
+        var archivo = event.target.files[0];
+
+        if (archivo) {
+
+            var lector = new FileReader();
+
+            lector.onload = function (e) {
+
+                document.getElementById("imagenPreview").src = e.target.result;
+
+            };
+
+            lector.readAsDataURL(archivo);
+
+        }
+
+    });</script>
