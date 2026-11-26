@@ -1,0 +1,137 @@
+﻿@model IEnumerable<CatálogoAcademiaDeAmigurumis.Abstracciones.Modelos.Amigurumi.AmigurumiDto>
+
+@{
+    ViewBag.Title = "Catálogo de Amigurumis";
+}
+
+<div class="container mt-5">
+
+    <div class="d-flex justify-content-between align-items-center mb-5">
+
+        <div>
+
+            <h1 class="kroche-title">
+                🧸 Catálogo de Amigurumis
+            </h1>
+
+            <p class="kroche-subtitle">
+                Creaciones artesanales hechas con amor y creatividad.
+            </p>
+
+        </div>
+
+        <div>
+
+            @Html.ActionLink(
+                "➕ Nuevo Amigurumi",
+                "Create",
+                null,
+                new { @class = "btn btn-kroche btn-lg" })
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+            <div class="col-lg-4 col-md-6 mb-4">
+
+                <div class="card kroche-card h-100">
+
+                    @*<img src="@item.ImagenPrincipal"
+        class="card-img-top kroche-img"*@
+
+                    <img src="~/Imagenes/OsoKroche.png"
+                         class="card-img-top kroche-img" 
+
+                    alt="@item.Nombre" />
+
+                    <div class="card-body">
+
+                        <h4 class="card-title kroche-name">
+                            @item.Nombre
+                        </h4>
+
+                        <p class="card-text descripcion">
+                            @item.Descripcion
+                        </p>
+
+                        <hr />
+
+                        <p>
+                            <strong> Tamaño:</strong>
+                            @item.Tamano
+                        </p>
+
+                        <p>
+                            <strong> Técnica:</strong>
+                            @item.Tecnica
+                        </p>
+
+                        <p class="kroche-price">
+                            ₡@String.Format("{0:N0}", item.Precio)
+                        </p>
+
+                        <p>
+
+                            <strong>Estado:</strong>
+
+                            @if (item.Estado == "Disponible")
+                            {
+                                <span class="estado-disponible">
+                                    Disponible
+                                </span>
+                            }
+                            else if (item.Estado == "Agotado")
+                            {
+                                <span class="estado-agotado">
+                                    Agotado
+                                </span>
+                            }
+                            else
+                            {
+                                <span class="estado-desactivado">
+                                    Desactivado
+                                </span>
+                            }
+
+                        </p>
+
+                    </div>
+
+                    <div class="card-footer bg-white border-0">
+
+                        <div class="d-grid gap-2">
+
+                            @Html.ActionLink(
+                                " Ver Producto",
+                                "Details",
+                                new { id = item.IdAmigurumi },
+                                new { @class = "btn btn-ver" })
+
+                            @Html.ActionLink(
+                                " Editar",
+                                "Edit",
+                                new { id = item.IdAmigurumi },
+                                new { @class = "btn btn-editar" })
+
+                            @Html.ActionLink(
+                                " Eliminar",
+                                "Delete",
+                                new { id = item.IdAmigurumi },
+                                new { @class = "btn btn-eliminar" })
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        }
+
+    </div>
+
+</div>

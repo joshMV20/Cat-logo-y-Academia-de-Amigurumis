@@ -1,0 +1,99 @@
+﻿body {
+    background-color: white;
+}
+
+.kroche-title {
+    color: #5A2D1C;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+.kroche-subtitle {
+    color: #D48AA2;
+    font-size: 1.1rem;
+}
+
+.kroche-card {
+    border: none;
+    border-radius: 25px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0px 8px 25px rgba(0,0,0,.08);
+    transition: 0.3s;
+}
+
+    .kroche-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0px 15px 30px rgba(248,175,195,.40);
+    }
+
+.kroche-img {
+    height: 280px;
+    object-fit: cover;
+}
+
+.kroche-name {
+    color: #5A2D1C;
+    font-weight: bold;
+}
+
+.descripcion {
+    color: #6B6B6B;
+}
+
+.kroche-price {
+    color: #F39AB5;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.btn-kroche {
+    background-color: #F39AB5;
+    color: white;
+    border-radius: 30px;
+    border: none;
+}
+
+    .btn-kroche:hover {
+        background-color: #eb84a5;
+        color: white;
+    }
+
+.btn-ver {
+    background-color: #F39AB5;
+    color: white;
+    border-radius: 15px;
+}
+
+.btn-editar {
+    background-color: #A5B88F;
+    color: white;
+    border-radius: 15px;
+}
+
+.btn-eliminar {
+    background-color: #D96C75;
+    color: white;
+    border-radius: 15px;
+}
+
+.estado-disponible {
+    background: #DFF3E3;
+    color: #2C7A4B;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+.estado-agotado {
+    background: #FFF0C2;
+    color: #8A6D1D;
+    padding: 6px 14px;
+    border-radius: 20px;
+}
+
+.estado-desactivado {
+    background: #FAD4D8;
+    color: #A02C3A;
+    padding: 6px 14px;
+    border-radius: 20px;
+}

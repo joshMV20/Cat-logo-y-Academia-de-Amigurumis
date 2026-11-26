@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="CatálogoAcademiaDeAmigurumis.Abstracciones/CatálogoAcademiaDeAmigurumis.Abstracciones.csproj" Id="094aede1-a95e-413f-a073-31464b8b8d46" />
+  <Project Path="CatálogoAcademiaDeAmigurumis.AccesoADatos/CatálogoAcademiaDeAmigurumis.AccesoADatos.csproj" Id="854618f4-99a5-4c85-b20d-64f62898cfcb" />
+  <Project Path="CatálogoAcademiaDeAmigurumis.LogicaDeNegocio/CatálogoAcademiaDeAmigurumis.LogicaDeNegocio.csproj" Id="080e348b-695e-4455-bf9d-9bf6222e19b4" />
+  <Project Path="CatálogoAcademiaDeAmigurumis.UI/CatálogoAcademiaDeAmigurumis.UI.csproj" Id="502d1cad-51f3-4362-aafb-6f229600e675" />
+</Solution>
