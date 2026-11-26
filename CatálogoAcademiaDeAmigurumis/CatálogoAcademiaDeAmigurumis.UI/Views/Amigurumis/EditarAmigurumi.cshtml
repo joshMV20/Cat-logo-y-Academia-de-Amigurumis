@@ -1,0 +1,221 @@
+﻿@model CatálogoAcademiaDeAmigurumis.Abstracciones.Modelos.Amigurumi.AmigurumiDto
+
+@{
+    ViewBag.Title = "Editar Amigurumi";
+}
+
+<div class="container mt-5">
+
+    <div class="text-center mb-5">
+
+        <h1 class="kroche-title">
+            ✏️ Editar Amigurumi
+        </h1>
+
+        <p class="kroche-subtitle">
+            Modifique la información de esta creación artesanal.
+        </p>
+
+    </div>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="kroche-card p-5">
+
+            @Html.ValidationSummary(
+                true,
+                "",
+                new { @class = "text-danger" })
+
+            <div class="row">
+
+                <!-- Imagen -->
+
+               
+
+                <!-- Formulario -->
+
+                <div class="col-md-8">
+
+                    <div class="mb-3">
+
+                        <label class="kroche-label">
+                            ID
+                        </label>
+
+                        @Html.TextBoxFor(
+                            m => m.IdAmigurumi,
+                            new
+                            {
+                                @class = "form-control kroche-input",
+                                @readonly = "readonly"
+                            })
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="kroche-label">
+                            Nombre
+                        </label>
+
+                        @Html.TextBoxFor(
+                            m => m.Nombre,
+                            new
+                            {
+                                @class = "form-control kroche-input"
+                            })
+
+                    </div>
+
+                    <div class="mb-3">
+
+                        <label class="kroche-label">
+                            Descripción
+                        </label>
+
+                        @Html.TextBoxFor(
+                            m => m.Descripcion,
+                           
+                            new
+                            {
+                                @class = "form-control kroche-input"
+                            })
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+                            <div class="mb-3">
+
+                                <label class="kroche-label">
+                                    Tamaño
+                                </label>
+
+                                @Html.TextBoxFor(
+                                    m => m.Tamano,
+                                    new
+                                    {
+                                        @class = "form-control kroche-input"
+                                    })
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="mb-3">
+
+                                <label class="kroche-label">
+                                    Técnica
+                                </label>
+
+                                @Html.TextBoxFor(
+                                    m => m.Tecnica,
+                                    new
+                                    {
+                                        @class = "form-control kroche-input"
+                                    })
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-6">
+
+                            <div class="mb-3">
+
+                                <label class="kroche-label">
+                                    Precio
+                                </label>
+
+                                @Html.TextBoxFor(
+                                    m => m.Precio,
+                                    new
+                                    {
+                                        @class = "form-control kroche-input"
+                                    })
+
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <div class="mb-3">
+
+                                <label class="kroche-label">
+                                    Estado
+                                </label>
+
+                                @Html.DropDownListFor(
+                                    m => m.Estado,
+                                    new List<SelectListItem>
+                                    {
+                                        new SelectListItem
+                                        {
+                                            Text="Disponible",
+                                            Value="Disponible"
+                                        },
+                                        new SelectListItem
+                                        {
+                                            Text="Agotado",
+                                            Value="Agotado"
+                                        },
+                                        new SelectListItem
+                                        {
+                                            Text="Desactivado",
+                                            Value="Desactivado"
+                                        }
+                                    },
+                                    new
+                                    {
+                                        @class="form-control kroche-input"
+                                    })
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr class="my-4"/>
+
+            <div class="d-flex justify-content-between">
+
+                @Html.ActionLink(
+                    "← Volver",
+                    "ObtenerLaListaDeAmigurumis",
+                    null,
+                    new { @class = "btn btn-secondary" })
+
+                <input type="submit"
+                       value="Guardar Cambios"
+                       class="btn btn-kroche" />
+
+            </div>
+
+        </div>
+    }
+
+</div>
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+
+}
+

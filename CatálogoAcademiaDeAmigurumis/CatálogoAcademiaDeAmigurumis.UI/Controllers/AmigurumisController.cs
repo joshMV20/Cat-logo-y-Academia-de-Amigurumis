@@ -49,14 +49,14 @@ namespace CatálogoAcademiaDeAmigurumis.UI.Controllers
         }
 
         // GET: Amigurumis/Create
-        public ActionResult Create()
+        public ActionResult AgregarAmigurumi()
         {
             return View();
         }
 
         // POST: Amigurumis/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult AgregarAmigurumi(FormCollection collection)
         {
             try
             {
@@ -71,14 +71,26 @@ namespace CatálogoAcademiaDeAmigurumis.UI.Controllers
         }
 
         // GET: Amigurumis/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult EditarAmigurumi(int id)
         {
-            return View();
+            var ejemplo = new AmigurumiDto
+            {
+                IdAmigurumi = 1,
+                Nombre = "Oso Tejido",
+                Descripcion = "Producto de demostración",
+                Tamano = "25 cm",
+                Tecnica = "Crochet",
+                Precio = 15000,
+                Estado = "Disponible",
+                ImagenPrincipal = "~/Imagenes/OsoKroche.jpg"
+            };
+
+            return View(ejemplo);
         }
 
         // POST: Amigurumis/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult EditarAmigurumi(int id, FormCollection collection)
         {
             try
             {
